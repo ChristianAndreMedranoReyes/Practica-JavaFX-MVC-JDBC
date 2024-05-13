@@ -11,12 +11,14 @@ import javafx.scene.control.ButtonType;
 
 /**
  *
- * @author Carlos
+ * @author informatica
  */
 public class SuperKinalAlert {
+    
     private static SuperKinalAlert instance;
     
     private SuperKinalAlert(){
+        
     }
     
     public static SuperKinalAlert getInstance(){
@@ -26,45 +28,49 @@ public class SuperKinalAlert {
         return instance;
     }
     
-    public void mostrarAlertaInformacion(int code){
-        if(code == 400){ // Codigo 400 sirve para agregación de registros
+    public void mostrarAlertaInfo(int code){
+        if(code == 700){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Confirmación Registro");
-            alert.setHeaderText("Confirmación Registro");
-            alert.setContentText("¡Registro realizado con éxito!");
+            alert.setTitle("Confirmacion de Registro");
+            alert.setHeaderText("Confirmacion de Registro");
+            alert.setContentText("Registro Realizado con Exito!");
             alert.showAndWait();
-        } else if(code == 500){// Codigo 500 sirve para edicion de registros
+        }else if(code == 600){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Edición Registro");
-            alert.setHeaderText("Edición Registro");
-            alert.setContentText("¡Edición realizada con éxito!");
+            alert.setTitle("Confirmacion de Edicion");
+            alert.setHeaderText("Confirmacion de Edicion");
+            alert.setContentText("Edicion Realizada con Exito!");
             alert.showAndWait();
-        } else if(code == 600){// Codigo 600 sirve para alerta de campos pendientes
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Campos Pendientes");
-            alert.setHeaderText("Campos Pendientes");
-            alert.setContentText("¡Algunos campos necesarios para el registro están vacíos!");
-            alert.showAndWait();
+        }else if(code == 500){
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+           alert.setTitle("Campos Pendientes");
+           alert.setHeaderText("Campos Pendientes");
+           alert.setContentText("Aún quedan campos necesiario se encuentran vacios!");
+           alert.showAndWait(); 
+        }else if(code == 400){
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+           alert.setTitle("Campos llenos");
+           alert.setHeaderText("Campos llenos");
+           alert.setContentText("Utilice el boton vaciar para realizar el registro");
+           alert.showAndWait();
         }
     }
     
-    public Optional<ButtonType> mostrarAlertaConfirmacion(int code){
-        Optional<ButtonType> action = null;
-        
-        if(code == 404){//Codigo 404 sirve para confirmar la eliminacion de registro
+    public Optional <ButtonType> mostrarAlertaConfirmacion(int code){
+        Optional <ButtonType> action = null;
+        if(code == 800){
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Eliminación Registro");
-            alert.setHeaderText("Eliminación Registro");
-            alert.setContentText("¿Desea confirmar la eliminación del registro?");
+            alert.setTitle("Eliminacion de Registro");
+            alert.setHeaderText("Eliminacion de Registro");
+            alert.setContentText("¿Desea confirmar la eliminación?");
             action = alert.showAndWait();
-        }else if(code == 505){ //Codigo 505 sirve para confirmar la edicion de registros
+        }else if(code == 900){
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Edición Registro");
-            alert.setHeaderText("Edición Registro");
-            alert.setContentText("¿Desea confirmar la edición del registro?");
+            alert.setTitle("Edicion Registro");
+            alert.setHeaderText("Edicion Registro");
+            alert.setContentText("¿Desea confirmar la Edicion?");
             action = alert.showAndWait();
         }
-        
         return action;
     }
     

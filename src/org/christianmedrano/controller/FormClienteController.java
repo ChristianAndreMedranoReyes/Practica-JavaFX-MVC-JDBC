@@ -23,7 +23,7 @@ import org.christianmedrano.System.Main;
 /**
  * FXML Controller class
  *
- * @author Informatica
+ * @author informatica
  */
 public class FormClienteController implements Initializable {
 

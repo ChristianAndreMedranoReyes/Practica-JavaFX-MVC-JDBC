@@ -15,13 +15,13 @@ import org.christianmedrano.System.Main;
 
 /**
  *
- * @author Informatica
+ * @author Ernesto Lopez
  */
 public class MenuPrincipalController implements Initializable{
     private Main stage;
     
     @FXML
-    MenuItem btnMenuClientes;
+    MenuItem btnMenuClientes,btnMenuTickets, btnMenuProductos, btnMenuCargos, btnMenuDistribuidor, btnMenuCompras;
     
     @Override 
     public void initialize(URL location, ResourceBundle resources){
@@ -40,6 +40,16 @@ public class MenuPrincipalController implements Initializable{
     public void handleButtonAction(ActionEvent event){
         if(event.getSource() == btnMenuClientes){
             stage.menuClienteView();
+        }else if(event.getSource() == btnMenuTickets){
+            stage.menuTicketView();
+        }else if(event.getSource() == btnMenuProductos){
+            stage.menuProductoView();
+        }else if(event.getSource() == btnMenuCargos){
+            stage.menuCargoView();
+        }else if(event.getSource() == btnMenuDistribuidor){
+            stage.menuDistribuidoresView();
+        }else if(event.getSource() == btnMenuCompras){
+            stage.menuComprasView();
         }
     }
 }

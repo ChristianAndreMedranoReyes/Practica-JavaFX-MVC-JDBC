@@ -7,7 +7,7 @@ package org.christianmedrano.model;
 
 /**
  *
- * @author Carlos
+ * @author informatica
  */
 public class TicketSoporte {
     private int ticketSoporteId;

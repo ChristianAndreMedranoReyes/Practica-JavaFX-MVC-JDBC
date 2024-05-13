@@ -32,7 +32,7 @@ import org.christianmedrano.utils.SuperKinalAlert;
 /**
  * FXML Controller class
  *
- * @author Informatica
+ * @author informatica
  */
 public class MenuClienteController implements Initializable {
     private Main stage;

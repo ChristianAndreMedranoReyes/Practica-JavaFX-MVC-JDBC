@@ -9,20 +9,34 @@ import java.sql.Blob;
 
 /**
  *
- * @author Carlos
+ * @author informatica
  */
 public class Producto {
     private int productoId;
-    private String nombre;
-    private Blob imagen;
-
-    public Producto() {
+    private String nombreProducto;
+    private String descripcionProducto;
+    private int cantidadStock;
+    private int distribuidorId;
+    private int categoriaProductosId;
+    private double precioVentaUnitario;
+    private double precioVentaMayor;
+    private double precioCompra;
+    private Blob imagenProducto;
+    
+    Producto(){
+        
     }
 
-    public Producto(int productoId, String nombre, Blob imagen) {
-        this.productoId = productoId;
-        this.nombre = nombre;
-        this.imagen = imagen;
+    public Producto(String nombreProducto, String descripcionProducto, int cantidadStock, double precioVentaUnitario, double precioVentaMayor, double precioCompra, Blob imagenProducto, int distribuidorId, int categoriaProductosId) {
+        this.nombreProducto = nombreProducto;
+        this.distribuidorId = distribuidorId;
+        this.categoriaProductosId = categoriaProductosId;
+        this.descripcionProducto = descripcionProducto;
+        this.cantidadStock = cantidadStock;
+        this.precioVentaUnitario = precioVentaUnitario;
+        this.precioVentaMayor = precioVentaMayor;
+        this.precioCompra = precioCompra;
+        this.imagenProducto = imagenProducto;
     }
 
     public int getProductoId() {
@@ -33,26 +47,79 @@ public class Producto {
         this.productoId = productoId;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreProducto() {
+        return nombreProducto;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
     }
 
-    public Blob getImagen() {
-        return imagen;
+    public String getDescripcionProducto() {
+        return descripcionProducto;
     }
 
-    public void setImagen(Blob imagen) {
-        this.imagen = imagen;
+    public void setDescripcionProducto(String descripcionProducto) {
+        this.descripcionProducto = descripcionProducto;
     }
 
-    @Override
-    public String toString() {
-        return "Producto{" + "productoId=" + productoId + ", nombre=" + nombre + ", imagen=" + imagen + '}';
+    public int getCantidadStock() {
+        return cantidadStock;
     }
+
+    public void setCantidadStock(int cantidadStock) {
+        this.cantidadStock = cantidadStock;
+    }
+
+    public double getPrecioVentaUnitario() {
+        return precioVentaUnitario;
+    }
+
+    public void setPrecioVentaUnitario(double precioVentaUnitario) {
+        this.precioVentaUnitario = precioVentaUnitario;
+    }
+
+    public double getPrecioVentaMayor() {
+        return precioVentaMayor;
+    }
+
+    public void setPrecioVentaMayor(double precioVentaMayor) {
+        this.precioVentaMayor = precioVentaMayor;
+    }
+
+    public double getPrecioCompra() {
+        return precioCompra;
+    }
+
+    public void setPrecioCompra(double precioCompra) {
+        this.precioCompra = precioCompra;
+    }
+
+    public Blob getImagenProducto() {
+        return imagenProducto;
+    }
+
+    public void setImagenProducto(Blob imagenProducto) {
+        this.imagenProducto = imagenProducto;
+    }
+
+    public int getDistribuidorId() {
+        return distribuidorId;
+    }
+
+    public void setDistribuidorId(int distribuidorId) {
+        this.distribuidorId = distribuidorId;
+    }
+
+    public int getcategoriaProductosId() {
+        return categoriaProductosId;
+    }
+
+    public void setcategoriaProductosId(int categoriaProductosId) {
+        this.categoriaProductosId = categoriaProductosId;
+    }
+    
+    
     
     
 }

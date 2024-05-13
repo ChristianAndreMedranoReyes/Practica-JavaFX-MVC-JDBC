@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.christianmedrano.controller.FormDistribuidoresController">
+   <children>
+      <ImageView fitHeight="750.0" fitWidth="500.0">
+         <image>
+            <Image url="@../images/ImagenFormDistribuidores.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfDistribuidorId" layoutX="63.0" layoutY="226.0" prefHeight="38.0" prefWidth="371.0" style="-fx-background-color: #004AAD;" />
+      <TextField fx:id="tfNombre" layoutX="65.0" layoutY="316.0" prefHeight="38.0" prefWidth="371.0" style="-fx-background-color: #004AAD;" />
+      <TextField fx:id="tfDireccion" layoutX="65.0" layoutY="405.0" prefHeight="38.0" prefWidth="371.0" style="-fx-background-color: #004AAD;" />
+      <TextField fx:id="tfNit" layoutX="65.0" layoutY="494.0" prefHeight="38.0" prefWidth="371.0" style="-fx-background-color: #004AAD;" />
+      <TextField fx:id="tfTelefono" layoutX="65.0" layoutY="583.0" prefHeight="38.0" prefWidth="371.0" style="-fx-background-color: #004AAD;" />
+      <TextField fx:id="tfWeb" layoutX="65.0" layoutY="673.0" prefHeight="38.0" prefWidth="371.0" style="-fx-background-color: #004AAD;" />
+      <Button fx:id="btnCancelar" layoutX="259.0" layoutY="717.0" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #004AAD; -fx-background-radius: 50;" text="Cancelar" textFill="WHITE" />
+      <Button fx:id="btnGuardar" layoutX="169.0" layoutY="717.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #004AAD; -fx-background-radius: 50;" text="Guardar" textFill="WHITE" />
+   </children>
+</AnchorPane>
