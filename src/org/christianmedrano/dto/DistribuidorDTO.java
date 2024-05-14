@@ -8,7 +8,7 @@ import org.christianmedrano.model.Distribuidor;
 
 /**
  *
- * @author Ernesto Lopez
+ * @author medra
  */
 public class DistribuidorDTO {
     private static DistribuidorDTO instance;

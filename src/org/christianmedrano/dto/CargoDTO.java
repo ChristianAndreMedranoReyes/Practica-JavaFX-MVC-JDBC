@@ -9,7 +9,7 @@ import org.christianmedrano.model.Cargos;
 
 /**
  *
- * @author Ernesto Lopez
+ * @author medra
  */
 public class CargoDTO {
  private static CargoDTO instance;

@@ -1,4 +1,5 @@
 use superDB;
+SET GLOBAL time_zone = '-6:00';
 
 -- AGREGAR CARGO --
 DELIMITER $$
@@ -252,6 +253,7 @@ create procedure sp_ListaClientes()
 				from Clientes;
 	end$$
 delimiter ;
+call sp_ListarClientes();
  
 -- ELIMINAR CLIENTE--
 delimiter $$

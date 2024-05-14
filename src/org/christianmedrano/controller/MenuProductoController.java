@@ -34,7 +34,7 @@ import org.christianmedrano.utils.SuperKinalAlert;
 /**
  * FXML Controller class
  *
- * @author Ernesto Lopez
+ * @author medra
  */
 public class MenuProductoController implements Initializable {
     /**

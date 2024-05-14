@@ -34,7 +34,7 @@ public class FormClienteController implements Initializable {
     private static PreparedStatement statement = null;
     
     @FXML
-    TextField tfCienteId, tfNom, tfApe, tfTele, tfDire, tfNit;
+    TextField tfClienteId, tfNombre, tfApellido, tfTelefono, tfDireccion, tfNit;
     @FXML
     Button btnGuardar, btnCancelar;
     /**
@@ -48,11 +48,11 @@ public class FormClienteController implements Initializable {
     }  
     
     public void cargarDatos(Cliente cliente){
-        tfCienteId.setText(Integer.toString(cliente.getClienteId()));
-        tfNom.setText(cliente.getNombre());
-        tfApe.setText(cliente.getApellido());  
-        tfTele.setText(cliente.getTelefono());        
-        tfDire.setText(cliente.getDireccion());      
+        tfClienteId.setText(Integer.toString(cliente.getClienteId()));
+        tfNombre.setText(cliente.getNombre());
+        tfApellido.setText(cliente.getApellido());  
+        tfTelefono.setText(cliente.getTelefono());        
+        tfDireccion.setText(cliente.getDireccion());      
         tfNit.setText(cliente.getNit());
     }
 
@@ -69,10 +69,10 @@ public class FormClienteController implements Initializable {
             conexion = Conexion.getInstance().obtenerConexion();
             String sql = "call sp_agregarClientes(?, ?, ?, ?, ?)";
             statement = conexion.prepareStatement(sql);
-            statement.setString(1, tfNom.getText());
-            statement.setString(2, tfApe.getText());
-            statement.setString(3, tfTele.getText());
-            statement.setString(4, tfDire.getText());
+            statement.setString(1, tfNombre.getText());
+            statement.setString(2, tfApellido.getText());
+            statement.setString(3, tfTelefono.getText());
+            statement.setString(4, tfDireccion.getText());
             statement.setString(5, tfNit.getText());
             statement.execute();
         }catch(SQLException e){
@@ -94,13 +94,13 @@ public class FormClienteController implements Initializable {
     public void editarCliente(){
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "call sp_EditarClientes(?, ?, ?, ?, ?, ?)";
+            String sql = "call sp_editarClientes(?, ?, ?, ?, ?, ?)";
             statement = conexion.prepareStatement(sql);
-            statement.setInt(1, Integer.parseInt(tfCienteId.getText()));
-            statement.setString(2, tfNom.getText());
-            statement.setString(3, tfApe.getText());
-            statement.setString(4, tfTele.getText());
-            statement.setString(5, tfDire.getText());
+            statement.setInt(1, Integer.parseInt(tfClienteId.getText()));
+            statement.setString(2, tfNombre.getText());
+            statement.setString(3, tfApellido.getText());
+            statement.setString(4, tfTelefono.getText());
+            statement.setString(5, tfDireccion.getText());
             statement.setString(6, tfNit.getText());      
             statement.execute();
         }catch(SQLException e){
@@ -119,12 +119,12 @@ public class FormClienteController implements Initializable {
     @FXML
     public void handleButtonAction(ActionEvent event){
         if(event.getSource() == btnCancelar){
-            stage.menuClienteView();
             ClienteDTO.getClienteDTO().setCliente(null);
+            stage.menuClienteView();
         }else if(event.getSource() == btnGuardar){
             if(op == 1){
+            agregarCliente(); 
             stage.menuClienteView();
-            agregarCliente();                
             }else if(op == 2){
                 editarCliente();
                 ClienteDTO.getClienteDTO().setCliente(null);
@@ -136,6 +136,5 @@ public class FormClienteController implements Initializable {
     public void setOp(int op) {
         this.op = op;
     }
-
     
 }

@@ -1,6 +1,7 @@
 drop database superDB;
 create database superDB;
 use superDB;
+SET GLOBAL time_zone = '-6:00';
 
 create table Cargos(
 	cargoId INT not null auto_increment,
@@ -128,6 +129,12 @@ create table DetalleFactura(
     constraint FK_DetalleFactura_Productos foreign key DetalleFactura(productoId)
         references Productos(productoId)
 );
+Insert into Clientes(nombre, apellido, telefono, direccion, nit) values
+	('Christian', 'Medrano', '3769-0310', 'Ciudad', '123-456'),
+    ('Andre', 'Reyes', '9876-5555', 'Ciudad', '489-123'),
+    ('Carlos', 'Jimenez', '7859-1496', 'Ciudad', '456-589');
+    
+select * from Clientes;
 
 
 

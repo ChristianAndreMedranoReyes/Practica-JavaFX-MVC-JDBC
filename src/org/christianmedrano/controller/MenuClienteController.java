@@ -18,7 +18,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -27,64 +26,39 @@ import org.christianmedrano.dao.Conexion;
 import org.christianmedrano.dto.ClienteDTO;
 import org.christianmedrano.model.Cliente;
 import org.christianmedrano.System.Main;
-import org.christianmedrano.utils.SuperKinalAlert;
-
 /**
- * FXML Controller class
- *
- * @author informatica
- */
+* FXML Controller class
+*
+* @author informatica
+*/
 public class MenuClienteController implements Initializable {
+ 
+    /**
+     * Initializes the controller class.
+     */
     private Main stage;
     private int op;
-    
     private static Connection conexion;
     private static PreparedStatement statement;
     private static ResultSet resultSet;
     
+    //Cliente cliente = new Cliente();
+    @FXML
+    Button btnRegresar, btnAgregar, btnEditar, btnEliminar, btnBuscar;
     @FXML
     TableView tblClientes;
     @FXML
     TableColumn colClienteId, colNombre, colApellido, colTelefono, colDireccion, colNit;
     @FXML
-    Button btnRegresar, btnAgregar, btnEditar, btnEliminar, btnBuscar;
-    @FXML
     TextField tfClienteId;
-    
-    @FXML
-    public void handleButtonAction(ActionEvent event){
-        if(event.getSource() == btnRegresar){
-            stage.menuPrincipalView();
-        }else if(event.getSource() == btnAgregar){
-            stage.formClienteView(1);
-        }else if(event.getSource() == btnEditar){
-            ClienteDTO.getClienteDTO().setCliente((Cliente)tblClientes.getSelectionModel().getSelectedItem());
-            stage.formClienteView(2);
-        }else if(event.getSource() == btnEliminar){
-            if(SuperKinalAlert.getInstance().mostrarAlertaConfirmacion(404).get() == ButtonType.OK){
-                eliminarCliente(((Cliente)tblClientes.getSelectionModel().getSelectedItem()).getClienteId());
-                cargarDatos();
-            }   
-        }else if(event.getSource() == btnBuscar){
-            tblClientes.getItems().clear();
-            
-            if(tfClienteId.getText().equals("")){
-                cargarDatos();
-            }else{
-                op = 3;
-                cargarDatos();
-            }
-        }
-    }
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         cargarDatos();
-    }
+    }   
     
     public void cargarDatos(){
         if(op == 3){
-            //LLENAR LA TABLA CON EL CLIENTE BUSCADO
             tblClientes.getItems().add(buscarCliente());
             op = 0;
         }else{
@@ -100,13 +74,11 @@ public class MenuClienteController implements Initializable {
     
     public ObservableList<Cliente> listarClientes(){
         ArrayList<Cliente> clientes = new ArrayList<>();
-        
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "call sp_listarClientes()";
+            String sql = "call sp_ListarClientes();";
             statement = conexion.prepareStatement(sql);
             resultSet = statement.executeQuery();
-            
             while(resultSet.next()){
                 int clienteId = resultSet.getInt("clienteId");
                 String nombre = resultSet.getString("nombre");
@@ -114,10 +86,9 @@ public class MenuClienteController implements Initializable {
                 String telefono = resultSet.getString("telefono");
                 String direccion = resultSet.getString("direccion");
                 String nit = resultSet.getString("nit");
-                
                 clientes.add(new Cliente(clienteId, nombre, apellido, telefono, direccion, nit));
             }
-        }catch(SQLException e){
+        }catch (SQLException e){
             System.out.println(e.getMessage());
         }finally{
             try{
@@ -130,27 +101,60 @@ public class MenuClienteController implements Initializable {
                 if(conexion != null){
                     conexion.close();
                 }
-            }catch(SQLException e){
+            }catch (Exception e){
                 System.out.println(e.getMessage());
             }
         }
         return FXCollections.observableList(clientes);
+    }    
+
+ 
+    public Main getStage() {
+        return stage;
+    }
+ 
+    public void setStage(Main stage) {
+        this.stage = stage;
+    }
+
+    @FXML
+    public void handleButtonAction(ActionEvent event){
+        if(event.getSource() == btnRegresar){
+            stage.menuPrincipalView();
+        }else if(event.getSource() == btnAgregar){
+            stage.formClienteView(1);
+        }else if(event.getSource() == btnEditar){
+            ClienteDTO.getClienteDTO().setCliente((Cliente)tblClientes.getSelectionModel().getSelectedItem());
+            stage.formClienteView(2);
+        }else if(event.getSource() == btnEliminar){
+            eliminarCliente(((Cliente)tblClientes.getSelectionModel().getSelectedItem()).getClienteId());
+            cargarDatos();
+        }else if(event.getSource() == btnBuscar){ 
+            tblClientes.getItems().clear();
+            if(tfClienteId.getText().equals("")){
+                cargarDatos();
+            }else{
+                op = 3;
+                cargarDatos();
+            }
+        }
+           
     }
     
-    public void eliminarCliente(int cliId){
+    public void eliminarCliente(int clidId){
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "call sp_eliminarCliente(?)";
+            String sql = "call sp_eliminarClientes(?)";
             statement = conexion.prepareStatement(sql);
-            statement.setInt(1, cliId);
-            statement.execute();
+            statement.setInt(1, clidId);
+            statement.execute();            
         }catch(SQLException e){
             System.out.println(e.getMessage());
         }finally{
             try{
                 if(statement != null){
                     statement.close();
-                } 
+                }
                 if(conexion != null){
                     conexion.close();
                 }
@@ -164,7 +168,7 @@ public class MenuClienteController implements Initializable {
         Cliente cliente = null;
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "call sp_buscarCliente(?)";
+            String sql = "call sp_buscarClientes(?)";
             statement = conexion.prepareStatement(sql);
             statement.setInt(1, Integer.parseInt(tfClienteId.getText()));
             resultSet = statement.executeQuery();
@@ -200,14 +204,4 @@ public class MenuClienteController implements Initializable {
         
         return cliente;
     }
-
-    public Main getStage() {
-        return stage;
-    }
-
-    public void setStage(Main stage) {
-        this.stage = stage;
-    }
-    
-    
 }

@@ -1,7 +1,7 @@
-Use superDB;
+use superDB;
 SET GLOBAL time_zone = '-6:00';
 
--- Asignar Encargado ------------------------------ --
+--  Asignar Encargado ------------------------------ --
 
 Delimiter $$
 Create function FN_AsignarEncargado(encId int) returns boolean

@@ -7,7 +7,7 @@ package org.christianmedrano.model;
 
 /**
  *
- * @author Ernesto Lopez
+ * @author medra
  */
 public class Cargos {
    private String nombreCargo;
