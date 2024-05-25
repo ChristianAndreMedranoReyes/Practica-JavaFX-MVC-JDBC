@@ -37,7 +37,7 @@ public class FormDistribuidoresController implements Initializable {
     @FXML
     TextField tfDistribuidorId, tfNomDistri, tfDirecDistri, tfNitDistri, tfTelDistri, tfWebDistri;
     @FXML
-    Button btnGuardarDistri, btnCancelarDistri;
+    Button btnGuardar, btnCancelar;
     /**
      * Initializes the controller class.
      */
@@ -120,10 +120,10 @@ public class FormDistribuidoresController implements Initializable {
     
     @FXML
     public void handleButtonAction(ActionEvent event){
-        if(event.getSource() == btnCancelarDistri){
+        if(event.getSource() == btnCancelar){
             DistribuidorDTO.getDistribuidorDTO().setDistribuidor(null);
             stage.menuDistribuidoresView();
-        }else if(event.getSource() == btnGuardarDistri){
+        }else if(event.getSource() == btnGuardar){
             if(op == 1){
             agregarDistribuidores(); 
             stage.menuDistribuidoresView();

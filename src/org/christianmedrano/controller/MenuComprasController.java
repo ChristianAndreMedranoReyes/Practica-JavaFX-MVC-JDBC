@@ -46,11 +46,11 @@ public class MenuComprasController implements Initializable {
     private static ResultSet resultSet;
     
     @FXML
-     Button btnSalirComp, btnAgregarComp, btnEditarComp, btnEliminarComp, btnBuscarComp;
+     Button btnSalir, btnAgregar, btnEditar, btnEliminar, btnBuscar;
     @FXML
     TableView tblCompras;
     @FXML
-     TableColumn colComprasId, colfechaCompra, cototalCompra;
+     TableColumn colComprasId, colFechaCompra, colTotalCompra;
     @FXML
      TextField tfComprasId;
     
@@ -67,15 +67,15 @@ public class MenuComprasController implements Initializable {
             tblCompras.setItems(listarCompras());
         }
         colComprasId.setCellValueFactory(new PropertyValueFactory<Compras, Integer>("compraId"));
-        colfechaCompra.setCellValueFactory(new PropertyValueFactory<Compras, String>("fechaCompra"));
-        cototalCompra.setCellValueFactory(new PropertyValueFactory<Compras, String>("totalCompra"));
+        colFechaCompra.setCellValueFactory(new PropertyValueFactory<Compras, String>("fechaCompra"));
+        colTotalCompra.setCellValueFactory(new PropertyValueFactory<Compras, String>("totalCompra"));
     }
     
     public ObservableList<Compras> listarCompras(){
         ArrayList<Compras> compras = new ArrayList<>();
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "call sp_listarCompra();";
+            String sql = "call sp_ListarCompras();";
             statement = conexion.prepareStatement(sql);
             resultSet = statement.executeQuery();
             while(resultSet.next()){
@@ -107,7 +107,7 @@ public class MenuComprasController implements Initializable {
     public void eliminarCompras(int compId){
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "call sp_eliminarCompra(?)";
+            String sql = "call sp_EliminarCompra(?)";
             statement = conexion.prepareStatement(sql);
             statement.setInt(1, compId);
             statement.execute();            
@@ -131,13 +131,13 @@ public class MenuComprasController implements Initializable {
         Compras compras = null;
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "call sp_buscarCompra(?)";
+            String sql = "call sp_BuscarCompra(?)";
             statement = conexion.prepareStatement(sql);
             statement.setInt(1, Integer.parseInt(tfComprasId.getText()));
             resultSet = statement.executeQuery();
             
             if(resultSet.next()){
-                int clienteId = resultSet.getInt("clienteId");
+                int clienteId = resultSet.getInt("compraId");
                 String fechaCompra = resultSet.getString("fechaCompra");
                 double totalCompra = resultSet.getDouble("totalCompra");
                 
@@ -175,17 +175,17 @@ public class MenuComprasController implements Initializable {
     
     @FXML
     public void handleButtonAction(ActionEvent event){
-        if(event.getSource() == btnSalirComp){
+        if(event.getSource() == btnSalir){
             stage.menuPrincipalView();
-        }else if(event.getSource() == btnAgregarComp){
+        }else if(event.getSource() == btnAgregar){
             stage.formComprasView(1);
-        }else if(event.getSource() == btnAgregarComp){
+        }else if(event.getSource() == btnAgregar){
             ComprasDTO.getComprasDTO().setCompras((Compras)tblCompras.getSelectionModel().getSelectedItem());
             stage.formComprasView(2);
-        }else if(event.getSource() == btnEliminarComp){
+        }else if(event.getSource() == btnEliminar){
             eliminarCompras(((Compras)tblCompras.getSelectionModel().getSelectedItem()).getComprasId());
             cargarDatos();
-        }else if(event.getSource() == btnBuscarComp){ 
+        }else if(event.getSource() == btnBuscar){ 
             tblCompras.getItems().clear();
             if(tfComprasId.getText().equals("")){
                 cargarDatos();
@@ -198,3 +198,4 @@ public class MenuComprasController implements Initializable {
     }
     
 }
+

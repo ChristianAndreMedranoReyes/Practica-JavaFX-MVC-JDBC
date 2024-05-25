@@ -90,7 +90,7 @@ public class MenuCargoController implements Initializable {
         
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "call sp_listarCargo();";
+            String sql = "call sp_ListarCargos();";
             statement = conexion.prepareStatement(sql);
             resultSet = statement.executeQuery();
             
@@ -127,7 +127,7 @@ public class MenuCargoController implements Initializable {
         Cargos cargos = null;
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "call sp_buscarCargo(?);";
+            String sql = "call sp_BuscarCargo(?);";
             statement = conexion.prepareStatement(sql);
             statement.setInt(1, Integer.parseInt(tfBarra.getText()));
             resultSet = statement.executeQuery();
@@ -160,10 +160,10 @@ public class MenuCargoController implements Initializable {
         return cargos;
     }
     
-    public void eliminarCargos(int cargId){
+    public void eliminarCargo(int cargId){
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "call sp_eliminarCargo(?);";
+            String sql = "call sp_EliminarCargo(?);";
             statement = conexion.prepareStatement(sql);
             statement.setInt(1, cargId);
             statement.execute();     
@@ -198,7 +198,7 @@ public class MenuCargoController implements Initializable {
             cargarDatos();
         }else if(event.getSource()== btnEliminar){
             if(SuperKinalAlert.getInstance().mostrarAlertaConfirmacion(700).get() == ButtonType.OK){
-                eliminarCargos(((Cargos)tblCargos.getSelectionModel().getSelectedItem()).getCargoId());
+                eliminarCargo(((Cargos)tblCargos.getSelectionModel().getSelectedItem()).getCargoId());
                 cargarDatos();
             }
         }else if(event.getSource() == btnBuscar){

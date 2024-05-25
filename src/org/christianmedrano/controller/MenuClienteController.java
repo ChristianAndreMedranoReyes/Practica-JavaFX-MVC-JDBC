@@ -144,7 +144,7 @@ public class MenuClienteController implements Initializable {
     public void eliminarCliente(int clidId){
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "call sp_eliminarClientes(?)";
+            String sql = "call sp_EliminarClientes(?)";
             statement = conexion.prepareStatement(sql);
             statement.setInt(1, clidId);
             statement.execute();            
@@ -168,7 +168,7 @@ public class MenuClienteController implements Initializable {
         Cliente cliente = null;
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "call sp_buscarClientes(?)";
+            String sql = "call sp_BuscarClientes(?)";
             statement = conexion.prepareStatement(sql);
             statement.setInt(1, Integer.parseInt(tfClienteId.getText()));
             resultSet = statement.executeQuery();

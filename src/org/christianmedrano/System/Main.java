@@ -65,6 +65,7 @@ public class Main extends Application {
             menuPrincipalView.setStage(this);
         }catch(Exception e){
             System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
     
@@ -75,17 +76,19 @@ public class Main extends Application {
         
         }catch(Exception e){
             System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
     
     public void formClienteView(int op){
         try{
-            FormClienteController formClienteView = (FormClienteController) switchScene("FormClientesView.fxml", 500, 700);
+            FormClienteController formClienteView = (FormClienteController) switchScene("FormClienteView.fxml", 500, 750);
             formClienteView.setOp(op);
             formClienteView.setStage(this);
             formClienteView.setStage(this);
         }catch(Exception e){
             System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
     
@@ -95,6 +98,7 @@ public class Main extends Application {
             menuTicketView.setStage(this);
         }catch (Exception e){
             System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
     
@@ -104,6 +108,7 @@ public class Main extends Application {
             menuProductoView.setStage(this);
         }catch (Exception e){
             System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
     public void formCargoView(int op){
@@ -113,21 +118,23 @@ public class Main extends Application {
             formCargosView.setStage(this);
         }catch (Exception e){
             System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
     
     public void menuCargoView(){
         try{
-            MenuCargoController menuCargosView = (MenuCargoController) switchScene("MenuCargosView.fxml", 900, 800);
+            MenuCargoController menuCargosView = (MenuCargoController) switchScene("MenuCargoView.fxml", 900, 800);
             menuCargosView.setStage(this);
         }catch (Exception e){
             System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
     public void menuDistribuidoresView(){
         try{
-            MenuDistribuidoresController menuDistribuidorView = (MenuDistribuidoresController) switchScene("MenuDistribuidores.fxml", 1200, 700);
-            menuDistribuidorView.setStage(this);
+            MenuDistribuidoresController menuDistribuidoresView = (MenuDistribuidoresController) switchScene("MenuDistribuidoresView.fxml", 1200, 700);
+            menuDistribuidoresView.setStage(this);
         }catch(Exception e){
             System.out.println(e.getMessage());
             e.printStackTrace();
@@ -136,12 +143,13 @@ public class Main extends Application {
     
     public void formDistribuidoresView(int op){
         try{
-            FormDistribuidoresController formDistribuidorView = (FormDistribuidoresController)switchScene("FormDistribuidor.fxml", 500, 750);
-            formDistribuidorView.setOp(op);
-            formDistribuidorView.setStage(this);
-            formDistribuidorView.setStage(this);
+            FormDistribuidoresController formDistribuidoresView = (FormDistribuidoresController)switchScene("FormDistribuidoresView.fxml", 500, 750);
+            formDistribuidoresView.setOp(op);
+            formDistribuidoresView.setStage(this);
+            formDistribuidoresView.setStage(this);
         }catch(Exception e){
             System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
     
@@ -157,12 +165,13 @@ public class Main extends Application {
     
     public void formComprasView(int op){
         try{
-            FormComprasController formComprasView = (FormComprasController) switchScene("FormsComprasView.fxml", 500, 600);
+            FormComprasController formComprasView = (FormComprasController) switchScene("FormComprasView.fxml", 500, 600);
             formComprasView.setOp(op);
             formComprasView.setStage(this);
             formComprasView.setStage(this);
         }catch(Exception e){
             System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 

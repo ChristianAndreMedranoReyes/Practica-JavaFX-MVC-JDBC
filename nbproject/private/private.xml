@@ -17,12 +17,13 @@
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/controller/MenuClienteController.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/model/Producto.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/dto/DistribuidorDTO.java</file>
+            <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/database/SP_superDB%20cm%20(3).sql</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/view/FormCargoView.fxml</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/controller/MenuComprasController.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/model/Compras.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/view/MenuComprasView.fxml</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/model/Distribuidor.java</file>
-            <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/images/ImagenMenuProducto.png</file>
+            <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/database/SP_superDB%20cm%20(2).sql</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/database/DDL_superDB%20cm%20(3).sql</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/images/ImagenMenuTicketSoporte.png</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/images/ImagenMenuDistribuidores.png</file>
@@ -37,12 +38,14 @@
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/controller/MenuDistribuidoresController.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/view/MenuDistribuidoresView.fxml</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/images/ImagenFormCargo.png</file>
+            <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/images/ImagenMenuProductos.png</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/model/Cargos.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/System/Main.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/model/TicketSoporte.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/controller/MenuPrincipalController.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/dao/Conexion.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/controller/FormCargoController.java</file>
+            <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/database/DDL_superDB%20cm%20(2).sql</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/controller/FormDistribuidoresController.java</file>
         </group>
     </open-files>

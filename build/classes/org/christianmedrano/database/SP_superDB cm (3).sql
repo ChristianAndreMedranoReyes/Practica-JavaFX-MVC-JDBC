@@ -15,9 +15,9 @@ DELIMITER $$
 CREATE PROCEDURE sp_ListarCargos()
 BEGIN
     SELECT 
-        cargoId,
-        nombreCargo,
-        descripcionCargo
+        Cargos.cargoId,
+        Cargos.nombreCargo,
+        Cargos.descripcionCargo
     FROM Cargos;
 END$$
 DELIMITER ;
@@ -36,9 +36,9 @@ DELIMITER $$
 CREATE PROCEDURE sp_BuscarCargo( IN carId INT)
 BEGIN
     SELECT
-        cargoId,
-        nombreCargo,
-        descripcionCargo
+        Cargos.cargoId,
+        Cargos.nombreCargo,
+        Cargos.descripcionCargo
     FROM Cargos
     WHERE cargoId = carId;
 END$$
@@ -242,9 +242,10 @@ Delimiter ;
  
 -- LISTAR CLIENTE--
 delimiter $$
-create procedure sp_ListaClientes()
+create procedure sp_ListarClientes()
 	begin
 		select 
+			Clientes.clientesId,
 			Clientes.nit,
 			Clientes.nombre,
 			Clientes.apellido,
@@ -253,7 +254,6 @@ create procedure sp_ListaClientes()
 				from Clientes;
 	end$$
 delimiter ;
-call sp_ListarClientes();
  
 -- ELIMINAR CLIENTE--
 delimiter $$

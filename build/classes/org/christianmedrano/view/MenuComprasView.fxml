@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="org.christianmedrano.controller.MenuComprasController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.christianmedrano.controller.MenuComprasController">
    <children>
       <ImageView fitHeight="702.0" fitWidth="1202.0" layoutX="-2.0" layoutY="-2.0" style="-fx-background-radius: 50;">
          <image>
@@ -19,9 +18,9 @@
       </ImageView>
       <TableView fx:id="tblCompras" layoutX="28.0" layoutY="212.0" prefHeight="460.0" prefWidth="840.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="compra Id" />
-          <TableColumn prefWidth="395.0" text="Fecha Compra" />
-            <TableColumn prefWidth="369.0" text="Total Compra" />
+          <TableColumn fx:id="colComprasId" prefWidth="75.0" text="compra Id" />
+          <TableColumn fx:id="colFechaCompra" prefWidth="395.0" text="Fecha Compra" />
+            <TableColumn fx:id="colTotalCompra" prefWidth="369.0" text="Total Compra" />
         </columns>
       </TableView>
       <TextField fx:id="tfBarra" layoutX="592.0" layoutY="158.0" prefHeight="35.0" prefWidth="235.0" />

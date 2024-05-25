@@ -43,11 +43,11 @@ public class MenuDistribuidoresController implements Initializable {
     private static ResultSet resultSet;
     
     @FXML
-    Button regresarClid, btnAgregardistri, btnEditardistri, btnEliminardistri, btnBuscardistri;
+    Button btnRegresar, btnAgregar, btnEditar, btnEliminar, btnBuscar;
     @FXML
-    TableView tbldistri;
+    TableView tblDistribuidores;
     @FXML
-    TableColumn coldistribuidorId, colNombreDistribuidor, colDireccionionDistribuidor, colNitDistribuidor, colTelefonoDistribuidor, colweb;
+    TableColumn colDistribuidorId, colNombre, colDireccion, colNit, colTelefono, colWeb;
     @FXML
     TextField tfDistribuidorId;
     @Override
@@ -58,20 +58,20 @@ public class MenuDistribuidoresController implements Initializable {
     
     public void cargarDatos(){
         if(op == 3){
-            tbldistri.getItems().add(buscarDistribuidor());
+            tblDistribuidores.getItems().add(buscarDistribuidores());
             op = 0;
         }else{
-            tbldistri.setItems(listarDistribuidor());
+            tblDistribuidores.setItems(listarDistribuidores());
         }
-        coldistribuidorId.setCellValueFactory(new PropertyValueFactory<Distribuidor, Integer>("distribuidorId"));
-        colNombreDistribuidor.setCellValueFactory(new PropertyValueFactory<Distribuidor, String>("nombreDistribuidor"));
-        colDireccionionDistribuidor.setCellValueFactory(new PropertyValueFactory<Distribuidor, String>("direccionDistribuidor"));
-        colNitDistribuidor.setCellValueFactory(new PropertyValueFactory<Distribuidor, String>("nitDistribuidor"));
-        colTelefonoDistribuidor.setCellValueFactory(new PropertyValueFactory<Distribuidor, String>("telefonoDistribuidor"));
-        colweb.setCellValueFactory(new PropertyValueFactory<Distribuidor, String>("web"));
+        colDistribuidorId.setCellValueFactory(new PropertyValueFactory<Distribuidor, Integer>("distribuidorId"));
+        colNombre.setCellValueFactory(new PropertyValueFactory<Distribuidor, String>("nombreDistribuidor"));
+        colDireccion.setCellValueFactory(new PropertyValueFactory<Distribuidor, String>("direccionDistribuidor"));
+        colNit.setCellValueFactory(new PropertyValueFactory<Distribuidor, String>("nitDistribuidor"));
+        colTelefono.setCellValueFactory(new PropertyValueFactory<Distribuidor, String>("telefonoDistribuidor"));
+        colWeb.setCellValueFactory(new PropertyValueFactory<Distribuidor, String>("web"));
     }
     
-    public ObservableList<Distribuidor> listarDistribuidor(){
+    public ObservableList<Distribuidor> listarDistribuidores(){
         ArrayList<Distribuidor> distribuidor = new ArrayList<>();
         try{
             conexion = Conexion.getInstance().obtenerConexion();
@@ -118,18 +118,18 @@ public class MenuDistribuidoresController implements Initializable {
 
     @FXML
     public void handleButtonAction(ActionEvent event){
-        if(event.getSource() == regresarClid){
+        if(event.getSource() == btnRegresar){
             stage.menuPrincipalView();
-        }else if(event.getSource() == btnAgregardistri){
+        }else if(event.getSource() == btnAgregar){
              stage.formDistribuidoresView(1);
-        }else if(event.getSource() == btnEditardistri){
-             DistribuidorDTO.getDistribuidorDTO().setDistribuidor((Distribuidor)tbldistri.getSelectionModel().getSelectedItem());
+        }else if(event.getSource() == btnEditar){
+             DistribuidorDTO.getDistribuidorDTO().setDistribuidor((Distribuidor)tblDistribuidores.getSelectionModel().getSelectedItem());
              stage.formDistribuidoresView(2);
-        }else if(event.getSource() == btnEliminardistri){
-            eliminarDistribuidores(((Distribuidor)tbldistri.getSelectionModel().getSelectedItem()).getDistribuidorId());
+        }else if(event.getSource() == btnEliminar){
+            eliminarDistribuidores(((Distribuidor)tblDistribuidores.getSelectionModel().getSelectedItem()).getDistribuidorId());
             cargarDatos();
-        }else if(event.getSource() == btnBuscardistri){ 
-            tbldistri.getItems().clear();
+        }else if(event.getSource() == btnBuscar){ 
+            tblDistribuidores.getItems().clear();
             if(tfDistribuidorId.getText().equals("")){
                 cargarDatos();
             }else{
@@ -163,7 +163,7 @@ public class MenuDistribuidoresController implements Initializable {
         }
     }
     
-    public Distribuidor buscarDistribuidor(){
+    public Distribuidor buscarDistribuidores(){
         Distribuidor distribuidor = null;
         try{
             conexion = Conexion.getInstance().obtenerConexion();

@@ -34,9 +34,9 @@ public class FormComprasController implements Initializable {
     private static PreparedStatement statement = null;
     
     @FXML
-    TextField tfComprasId, tfechaCompra, tftotalCompra;
+    TextField tfComprasId, tfFechaCompra, tfTotalCompra;
     @FXML
-    Button btnGuardarComp, btnCancelarComp;
+    Button btnGuardar, btnCancelar;
     /**
      * Initializes the controller class.
      */
@@ -49,8 +49,8 @@ public class FormComprasController implements Initializable {
     
     public void cargarDatos(Compras compras){
         tfComprasId.setText(Integer.toString(compras.getComprasId()));
-        tfechaCompra.setText(compras.getFechaCompra());
-        tftotalCompra.setText(Double.toString(compras.getTotalCompra()));  
+        tfFechaCompra.setText(compras.getFechaCompra());
+        tfTotalCompra.setText(Double.toString(compras.getTotalCompra()));  
     }
     
     public void agregarCompra(){
@@ -58,8 +58,8 @@ public class FormComprasController implements Initializable {
             conexion = Conexion.getInstance().obtenerConexion();
             String sql = "call sp_agregarCompra(?, ?)";
             statement = conexion.prepareStatement(sql);
-            statement.setString(1, tfechaCompra.getText());
-            statement.setString(2, tftotalCompra.getText());
+            statement.setString(1, tfFechaCompra.getText());
+            statement.setString(2, tfTotalCompra.getText());
             statement.execute();
         }catch(SQLException e){
             System.out.println(e.getMessage());
@@ -80,11 +80,11 @@ public class FormComprasController implements Initializable {
     public void editarCompra(){
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "call sp_editarCompra(?, ?, ?)";
+            String sql = "call sp_EditarCompra(?, ?, ?)";
             statement = conexion.prepareStatement(sql);
             statement.setInt(1, Integer.parseInt(tfComprasId.getText()));
-            statement.setString(2, tfechaCompra.getText());
-            statement.setString(3, tftotalCompra.getText());   
+            statement.setString(2, tfFechaCompra.getText());
+            statement.setString(3, tfTotalCompra.getText());   
             statement.execute();
         }catch(SQLException e){
             System.out.println(e.getMessage());
@@ -101,10 +101,10 @@ public class FormComprasController implements Initializable {
     
     @FXML
     public void handleButtonAction(ActionEvent event){
-        if(event.getSource() == btnCancelarComp){
+        if(event.getSource() == btnCancelar){
             ComprasDTO.getComprasDTO().setCompras(null);
             stage.menuComprasView();
-        }else if(event.getSource() == btnGuardarComp){
+        }else if(event.getSource() == btnGuardar){
             if(op == 1){
             agregarCompra(); 
             stage.menuComprasView();

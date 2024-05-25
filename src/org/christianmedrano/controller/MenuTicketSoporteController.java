@@ -137,7 +137,7 @@ public class MenuTicketSoporteController implements Initializable {
         
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "call sp_listarTicketsSoporte()";
+            String sql = "call sp_ListarTicketsSoporte()";
             statement = conexion.prepareStatement(sql);
             resultSet = statement.executeQuery();
             
@@ -176,7 +176,7 @@ public class MenuTicketSoporteController implements Initializable {
         
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "call sp_listarClientes()";
+            String sql = "call sp_ListarClientes()";
             statement = conexion.prepareStatement(sql);
             resultSet = statement.executeQuery();
             
@@ -238,7 +238,7 @@ public class MenuTicketSoporteController implements Initializable {
     public void editarTicket(){
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "call sp_editarTicketSoporte(?,?,?,?,?)";
+            String sql = "call sp_EditarTicketSoporte(?,?,?,?,?)";
             statement = conexion.prepareStatement(sql);
             statement.setInt(1, Integer.parseInt(tfTicketId.getText()));
             statement.setString(2, taDescripcion.getText());

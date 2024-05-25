@@ -10,7 +10,7 @@ package org.christianmedrano.model;
  * @author medra
  */
 public class Compras {
-    private int comprasId;
+    private int compraId;
     private String fechaCompra;
     private double totalCompra;
     
@@ -18,17 +18,17 @@ public class Compras {
     }
 
     public Compras(int comprasId, String fechaCompra, double totalCompra) {
-        this.comprasId = comprasId;
+        this.compraId = comprasId;
         this.fechaCompra = fechaCompra;
         this.totalCompra = totalCompra;
     }
 
     public int getComprasId() {
-        return comprasId;
+        return compraId;
     }
 
     public void setComprasId(int comprasId) {
-        this.comprasId = comprasId;
+        this.compraId = comprasId;
     }
 
     public String getFechaCompra() {
@@ -49,7 +49,7 @@ public class Compras {
 
     @Override
     public String toString() {
-        return "Compras{" + "comprasId=" + comprasId + ", fechaCompra=" + fechaCompra + ", totalCompra=" + totalCompra + '}';
+        return "Compras{" + "compraId=" + compraId + ", fechaCompra=" + fechaCompra + ", totalCompra=" + totalCompra + '}';
     }
 
 }

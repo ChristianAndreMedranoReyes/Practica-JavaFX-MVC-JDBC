@@ -8,8 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="org.christianmedrano.controller.MenuDistribuidoresController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.christianmedrano.controller.MenuDistribuidoresController">
    <children>
       <ImageView fitHeight="704.0" fitWidth="1200.0" layoutY="-2.0">
          <image>
@@ -18,18 +17,18 @@
       </ImageView>
       <Button fx:id="btnRegresar" layoutX="7.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-radius: 100;" text="Regresar" />
       <Button fx:id="btnBuscar" layoutX="841.0" layoutY="162.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="34.0" prefWidth="40.0" style="-fx-background-radius: 50;" text="🔎" />
-      <Button fx:id="btnEliminar" layoutX="1027.0" layoutY="426.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="79.0" prefWidth="115.0" style="-fx-background-radius: 50;" text="Eliminar" />
+      <Button fx:id="btnEliminar" layoutX="993.0" layoutY="458.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="79.0" prefWidth="115.0" style="-fx-background-radius: 50;" text="Eliminar" />
       <Button fx:id="btnAgregar" layoutX="993.0" layoutY="251.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="79.0" prefWidth="115.0" style="-fx-background-radius: 50;" text="Agregar" />
-      <Button fx:id="btnEditar" layoutX="999.0" layoutY="330.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="79.0" prefWidth="115.0" style="-fx-background-radius: 50;" text="Editar" />
+      <Button fx:id="btnEditar" layoutX="993.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="79.0" prefWidth="115.0" style="-fx-background-radius: 50;" text="Editar" />
       <TextField fx:id="tfBarra" layoutX="507.0" layoutY="162.0" prefHeight="34.0" prefWidth="324.0" style="-fx-background-radius: 50;" />
       <TableView fx:id="tblDistribuidores" layoutX="28.0" layoutY="209.0" prefHeight="468.0" prefWidth="842.0">
         <columns>
-          <TableColumn prefWidth="91.33333587646484" text="Distribuidor ID" />
-          <TableColumn prefWidth="161.0" text="Nombre" />
-            <TableColumn prefWidth="166.66665649414062" text="Direccion" />
-            <TableColumn prefWidth="125.6666259765625" text="Nit" />
-            <TableColumn prefWidth="154.3333740234375" text="Telefono" />
-            <TableColumn prefWidth="148.66668701171875" text="Web" />
+          <TableColumn fx:id="colDistribuidorId" prefWidth="91.33333587646484" text="Distribuidor ID" />
+          <TableColumn fx:id="colNombre" prefWidth="161.0" text="Nombre" />
+            <TableColumn fx:id="colDireccion" prefWidth="166.66665649414062" text="Direccion" />
+            <TableColumn fx:id="colNit" prefWidth="125.6666259765625" text="Nit" />
+            <TableColumn fx:id="colTelefono" prefWidth="154.3333740234375" text="Telefono" />
+            <TableColumn fx:id="colWeb" prefWidth="148.66668701171875" text="Web" />
         </columns>
       </TableView>
    </children>

@@ -16,11 +16,11 @@
             <Image url="@../images/ImagenFormClientes.png" />
          </image>
       </ImageView>
-      <TextField fx:id="tfNombre" layoutX="45.0" layoutY="173.0" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="301.0" style="-fx-background-color: white; -fx-background-radius: 50;" />
-      <TextField fx:id="tfNit" layoutX="45.0" layoutY="537.0" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="301.0" style="-fx-background-color: white; -fx-background-radius: 50;" />
-      <TextField fx:id="tfDireccion" layoutX="45.0" layoutY="447.0" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="301.0" style="-fx-background-color: white; -fx-background-radius: 50;" />
-      <TextField fx:id="tfTelefono" layoutX="45.0" layoutY="355.0" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="301.0" style="-fx-background-color: white; -fx-background-radius: 50;" />
-      <TextField fx:id="tfApellido" layoutX="45.0" layoutY="266.0" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="301.0" style="-fx-background-color: white; -fx-background-radius: 50;" />
+      <TextField fx:id="tfNombre" layoutX="45.0" layoutY="173.0" prefHeight="26.0" prefWidth="301.0" style="-fx-background-color: white; -fx-background-radius: 50;" />
+      <TextField fx:id="tfApellido" layoutX="45.0" layoutY="266.0" prefHeight="26.0" prefWidth="301.0" style="-fx-background-color: white; -fx-background-radius: 50;" />
+      <TextField fx:id="tfTelefono" layoutX="45.0" layoutY="355.0" prefHeight="26.0" prefWidth="301.0" style="-fx-background-color: white; -fx-background-radius: 50;" />
+      <TextField fx:id="tfDireccion" layoutX="45.0" layoutY="447.0" prefHeight="26.0" prefWidth="301.0" style="-fx-background-color: white; -fx-background-radius: 50;" />
+      <TextField fx:id="tfNit" layoutX="45.0" layoutY="537.0" prefHeight="26.0" prefWidth="301.0" style="-fx-background-color: white; -fx-background-radius: 50;" />
       <Button fx:id="btnGuardar" layoutX="57.0" layoutY="637.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="84.0" prefWidth="122.0" style="-fx-background-color: #34BBB2; -fx-background-radius: 20;" text="GUARDAR">
          <effect>
             <DropShadow color="#37b596" />

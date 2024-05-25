@@ -8,8 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="900.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="org.christianmedrano.controller.MenuCargoController">
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.christianmedrano.controller.MenuCargoController">
    <children>
       <ImageView fitHeight="803.0" fitWidth="901.0" layoutY="-3.0" style="-fx-background-radius: 50;">
          <image>
@@ -18,9 +17,9 @@
       </ImageView>
       <TableView fx:id="tblCargos" layoutX="94.0" layoutY="249.0" prefHeight="471.0" prefWidth="713.0">
         <columns>
-          <TableColumn prefWidth="100.33334350585938" text="Cargo Id" />
-          <TableColumn prefWidth="303.6666564941406" text="Nombre" />
-            <TableColumn prefWidth="308.6666717529297" text="Descripcion" />
+          <TableColumn fx:id="colCargoId" prefWidth="100.33334350585938" text="Cargo Id" />
+          <TableColumn fx:id="colNombreCargo" prefWidth="303.6666564941406" text="Nombre" />
+            <TableColumn fx:id="colDescripcion" prefWidth="308.6666717529297" text="Descripcion" />
         </columns>
       </TableView>
       <TextField fx:id="tfBarra" layoutX="79.0" layoutY="199.0" prefHeight="25.0" prefWidth="188.0" promptText="Busque por ID" />
