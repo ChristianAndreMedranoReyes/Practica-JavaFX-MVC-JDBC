@@ -24,7 +24,10 @@ import org.christianmedrano.controller.MenuTicketSoporteController;
 import org.christianmedrano.controller.FormDistribuidoresController;
 import org.christianmedrano.controller.MenuComprasController;
 import org.christianmedrano.controller.FormComprasController;
-
+import org.christianmedrano.controller.IniciarSesionController;
+import org.christianmedrano.controller.FormDetalleFacturasController;
+import org.christianmedrano.controller.FormFacturasController;
+import org.christianmedrano.controller.MenuFacturasController;
 /**
  *
  * @author medra
@@ -38,7 +41,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage){
         this.stage = stage;
-        stage.setTitle("Super Kinal APP");
+        stage.setTitle("SuperKinal APP by:cmedrano");
         menuPrincipalView();
         stage.show();
     }
@@ -172,6 +175,44 @@ public class Main extends Application {
         }catch(Exception e){
             System.out.println(e.getMessage());
             e.printStackTrace();
+        }
+    }
+    
+    public void IniciarSesionView(){
+        try{
+            IniciarSesionController IniciarSesionView = (IniciarSesionController)switchScene("IniciarSesionView.fxml", 500, 750);
+            IniciarSesionView.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void menuFacturasView() {
+        try{
+            MenuFacturasController menuFacturas = (MenuFacturasController)switchScene("MenuFacturasView.fxml", 1200, 750);
+            menuFacturas.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void formFacturasView(int op) {
+        try{
+            FormFacturasController formFacturas = (FormFacturasController)switchScene("FormFacturasView.fxml", 500, 750);
+            formFacturas.setOp(op);
+            formFacturas.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void formDetalleFacturasView(int op) {
+        try{
+            FormDetalleFacturasController formDetalleFacturas = (FormDetalleFacturasController)switchScene("FormDetalleFacturasView.fxml", 500, 750);
+            formDetalleFacturas.setOp(op);
+            formDetalleFacturas.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
         }
     }
 

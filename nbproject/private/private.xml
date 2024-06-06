@@ -5,10 +5,13 @@
         <group>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/controller/FormClienteController.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/images/ImagenFormClientes.png</file>
+            <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/controller/FormDetalleFacturasController.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/controller/MenuCargoController.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/utils/SuperKinalAlert.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/view/MenuCargoView.fxml</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/images/ImagenFormCompras.png</file>
+            <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/controller/MenuFacturasController.java</file>
+            <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/controller/FormFacturasController.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/view/FormComprasView.fxml</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/model/Cliente.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/controller/MenuTicketSoporteController.java</file>
@@ -23,7 +26,6 @@
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/model/Compras.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/view/MenuComprasView.fxml</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/model/Distribuidor.java</file>
-            <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/database/SP_superDB%20cm%20(2).sql</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/database/DDL_superDB%20cm%20(3).sql</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/images/ImagenMenuTicketSoporte.png</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/images/ImagenMenuDistribuidores.png</file>
@@ -45,7 +47,6 @@
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/controller/MenuPrincipalController.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/dao/Conexion.java</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/controller/FormCargoController.java</file>
-            <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/database/DDL_superDB%20cm%20(2).sql</file>
             <file>file:/C:/Users/medra/OneDrive/Escritorio/Repo%20Local/Practica-JavaFX-MVC-JDBC/src/org/christianmedrano/controller/FormDistribuidoresController.java</file>
         </group>
     </open-files>

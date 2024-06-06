@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="org.christianmedrano.controller.MenuFacturasController">
+   <children>
+      <ImageView fitHeight="750.0" fitWidth="1200.0">
+         <image>
+            <Image url="@../images/ImagenMenuFacturas.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnAgregar" layoutX="985.0" layoutY="363.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="71.0" prefWidth="162.0" style="-fx-background-radius: 50; -fx-background-color: #004AAD; -fx-border-color: black; -fx-border-radius: 50;" text="Agregar">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnEliminar" layoutX="985.0" layoutY="448.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="71.0" prefWidth="162.0" style="-fx-background-radius: 50; -fx-background-color: #004AAD; -fx-border-color: black; -fx-border-radius: 50;" text="Eliminar">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnEditar" layoutX="985.0" layoutY="533.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="71.0" prefWidth="162.0" style="-fx-background-radius: 50; -fx-background-color: #004AAD; -fx-border-color: black; -fx-border-radius: 50;" text="Editar">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnReportes" layoutX="984.0" layoutY="619.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="71.0" prefWidth="162.0" style="-fx-background-radius: 50; -fx-background-color: #004AAD; -fx-border-color: black; -fx-border-radius: 50;" text="Reportes">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAgregarDetalle" layoutX="665.0" layoutY="654.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="71.0" prefWidth="206.0" style="-fx-background-radius: 50; -fx-background-color: #004AAD; -fx-border-color: black; -fx-border-radius: 50;" text="Agregar Detalle">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnRegresar" layoutX="1065.0" layoutY="17.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="121.0" style="-fx-background-radius: 50; -fx-background-color: #004AAD; -fx-border-color: black; -fx-border-radius: 50;" text="REGRESAR" />
+      <TableView fx:id="tblFacturas" layoutX="44.0" layoutY="348.0" prefHeight="365.0" prefWidth="582.0">
+        <columns>
+          <TableColumn fx:id="colFacturaId" prefWidth="76.0" text="FacturaID" />
+          <TableColumn fx:id="colFecha" prefWidth="90.0" text="Fecha" />
+            <TableColumn fx:id="colHora" prefWidth="100.0" text="Hora" />
+            <TableColumn fx:id="colCliente" prefWidth="108.0" text="Cliente" />
+            <TableColumn fx:id="colEmpleado" prefWidth="102.0" text="Empleado" />
+            <TableColumn fx:id="colTotal" prefWidth="105.0" text="Total" />
+        </columns>
+      </TableView>
+      <TextField fx:id="tfFacturaId" layoutX="35.0" layoutY="301.0" prefHeight="29.0" prefWidth="322.0" promptText="Buscar Factura" style="-fx-background-radius: 0;" />
+      <Button fx:id="btnBuscar" layoutX="366.0" layoutY="303.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="39.0" style="-fx-background-radius: 0;" text="🔎" />
+   </children>
+</AnchorPane>

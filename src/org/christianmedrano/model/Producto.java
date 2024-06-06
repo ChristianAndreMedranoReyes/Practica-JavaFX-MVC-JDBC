@@ -39,6 +39,10 @@ public class Producto {
         this.imagenProducto = imagenProducto;
     }
 
+    public Producto(int productoId, String nombreProducto, String descripcionProducto, int cantidadStack, double precioVentaUnitario, double precioVentaMayor, double precioCompra, Blob imagenProducto, String distribuidor, String categoria) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public int getProductoId() {
         return productoId;
     }
